@@ -1,5 +1,8 @@
 <template lang="pug">
-div
-  span hello
-  slot
+Header
+slot
 </template>
+
+<script setup>
+import Header from "../components/layout/Header.vue";
+</script>
