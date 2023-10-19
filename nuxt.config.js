@@ -8,7 +8,12 @@ export default defineNuxtConfig({
   css: [
     "~/assets/style/reset.scss"
   ],
-  modules: ['@pinia/nuxt']
+  modules: ['@pinia/nuxt'],
+  runtimeConfig: {
+    public: {
+      apiPath: process.env.API_PATH
+    }
+  }
   // alias: {
   //   "@Components": "./components",
   // }
