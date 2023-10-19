@@ -4,12 +4,12 @@ NuxtLayout
 </template>
 
 <script setup>
-import {onMounted} from "vue";
-import {useApiStore} from "./stores/api.js";
+import { onMounted } from 'vue'
+import { useApiStore } from './stores/api.js'
 
 const store = useApiStore()
 
-onMounted( () => {
-  store.fetchData()
+onMounted(() => {
+	store.fetchData()
 })
 </script>
