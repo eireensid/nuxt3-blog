@@ -11,8 +11,10 @@ export default defineNuxtConfig({
 		public: {
 			apiPath: process.env.API_PATH
 		}
+	},
+	alias: {
+		'@/assets': './assets',
+		'@/components': './components',
+		'@/stores': './stores'
 	}
-	// alias: {
-	//   "@Components": "./components",
-	// }
 })

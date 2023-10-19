@@ -1,7 +1,7 @@
 <template lang="pug">
 header.header
   NuxtLink.header__logo-wr(to="/")
-    img.header__logo(src="../../assets/img/logo.svg" alt="Test blog")
+    img.header__logo(src="@/assets/img/logo.svg" alt="Test blog")
 </template>
 
 <style lang="scss">

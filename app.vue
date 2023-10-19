@@ -5,7 +5,7 @@ NuxtLayout
 
 <script setup>
 import { onMounted } from 'vue'
-import { useApiStore } from './stores/api.js'
+import { useApiStore } from '@/stores/api.js'
 
 const store = useApiStore()
 
