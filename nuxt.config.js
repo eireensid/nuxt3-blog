@@ -8,4 +8,8 @@ export default defineNuxtConfig({
   css: [
     "~/assets/style/reset.scss"
   ],
+  modules: ['@pinia/nuxt']
+  // alias: {
+  //   "@Components": "./components",
+  // }
 })
