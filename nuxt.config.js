@@ -16,7 +16,17 @@ export default defineNuxtConfig({
 			]
 		}
 	},
-	css: ['~/assets/style/reset.scss'],
+	css: ['~/assets/style/main.scss'],
+	vite: {
+		css: {
+			preprocessorOptions: {
+				scss: {
+					additionalData:
+						'@use "./assets/style/_reset.scss" as *; @use "./assets/style/_mixins.scss" as *; @use "./assets/style/_variables.scss" as *; @use "./assets/style/_media.scss" as *;'
+				}
+			}
+		}
+	},
 	modules: ['@pinia/nuxt'],
 	runtimeConfig: {
 		public: {

@@ -1,0 +1,79 @@
+@use "./assets/style/_variables.scss" as *;
+@use "./assets/style/_media.scss" as *;
+
+@mixin transition($style: all) {
+  transition: $style .25s ease-in-out;
+}
+
+@mixin flex($align: center, $justify: flex-start) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: column;
+
+  @include breakpoints(medium) {
+    flex-direction: row;
+  }
+}
+
+@mixin font($size, $line, $weight: 400, $color: $black) {
+  font-size: $size;
+  line-height: $line;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin link($color: $black) {
+  @include transition;
+  cursor: pointer;
+
+  &:hover, &--active {
+    color: $color;
+    text-decoration: line-through;
+  }
+}
+
+%hide {
+  opacity: 0;
+  visibility: hidden;
+  @include transition;
+}
+
+%show {
+  opacity: 1;
+  visibility: visible;
+}
+
+%title {
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-family: 'Unbounded', sans-serif;
+  @include font(28px, 38px, 500, $black);
+
+  @include breakpoints(medium) {
+		@include font(48px, 65px);
+    margin-bottom: 36px;
+	}
+}
+
+%description {
+  @include font(24px, 30px, 500, $black);
+  margin-bottom: 24px;
+
+  @include breakpoints(medium) {
+		@include font(24px, 38px);
+    margin-bottom: 36px;
+	}
+}
+
+%buttonBlack {
+  padding: 10px 50px;
+  background: $black;
+  border-radius: 2px;
+  @include transition;
+  @include font(18px, 26px, 400, $white);
+
+  &:hover {
+    background: $blue;
+  }
+}

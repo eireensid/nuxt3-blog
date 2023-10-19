@@ -1,0 +1,41 @@
+// Named Breakpoint Values
+$breakpoints: (
+  extrasmall: 375px,
+  small: 768px,
+  medium: 992px,
+  large: 1200px,
+  xlarge: 1500px,
+  xxlarge: 1900px,
+);
+
+@mixin breakpoints($from: none) {
+    // Set some empty min + max values
+    $min-width: null;
+
+    // Determine 'from' min-width value
+    @if (type-of($from) == string) and (map-has-key($breakpoints, $from)) {
+        // If value is a string listed in the named breakpoints map
+        $min-width: map-get($breakpoints, $from);
+    }
+    @else if ((type-of($from) == number) and (unitless($from) == false)) {
+        // If value is a number with a unit
+        $min-width: $from;
+    }
+    @else if ($from == none) {
+        // If the value is blank
+        $min-width: false;
+    }
+    @else {
+        // If none are true, display compile error
+        @error '`breakpoints()` min-width value `#{$from}` was not found.';
+    }
+
+    // If only the min-width value is set:
+    @if ($min-width != false) {
+      $min-width: $min-width;
+      @media screen and (min-width: #{$min-width}) {
+        // breakpoint mixin content:
+        @content;
+      }
+    }
+}

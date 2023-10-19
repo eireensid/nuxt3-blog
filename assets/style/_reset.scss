@@ -1,3 +1,5 @@
+@use "./assets/style/_variables.scss" as *;
+
 * {
   box-sizing: border-box;
 }
@@ -15,6 +17,7 @@ body {
   font-family: Montserrat, sans-serif;
   font-size: 18px;
   font-weight: 400;
+  color: $black;
   height: 100%;
 }
 
