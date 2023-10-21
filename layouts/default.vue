@@ -1,6 +1,7 @@
 <template lang="pug">
 Header
-slot
+main.main
+  slot
 </template>
 
 <script setup>
