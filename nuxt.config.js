@@ -37,5 +37,12 @@ export default defineNuxtConfig({
 		'@/assets': './assets',
 		'@/components': './components',
 		'@/stores': './stores'
-	}
+	},
+	components: [
+		{
+			global: true,
+			path: '~/components',
+			pathPrefix: false
+		}
+	]
 })
