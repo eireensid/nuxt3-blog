@@ -15,7 +15,7 @@ html {
 
 body {
   font-family: Montserrat, sans-serif;
-  font-size: 18px;
+  font-size: toRem(18);
   font-weight: 400;
   color: $black;
   height: 100%;

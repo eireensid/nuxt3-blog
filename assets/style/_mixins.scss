@@ -17,8 +17,8 @@
 }
 
 @mixin font($size, $line, $weight: 400, $color: $black) {
-  font-size: $size;
-  line-height: $line;
+  font-size: toRem($size);
+  line-height: toRem($line);
   font-weight: $weight;
   color: $color;
 }
@@ -71,9 +71,14 @@
   background: $black;
   border-radius: 2px;
   @include transition;
-  @include font(18px, 26px, 400, $white);
+  @include font(18, 26, 400, $white);
 
   &:hover {
     background: $blue;
   }
+}
+
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
 }
