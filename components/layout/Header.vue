@@ -15,5 +15,6 @@ header.header
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 20;
 }
 </style>
