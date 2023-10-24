@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 			}
 		}
 	},
-	modules: ['@pinia/nuxt'],
+	modules: ['@pinia/nuxt', 'nuxt-icons'],
 	runtimeConfig: {
 		public: {
 			apiPath: process.env.API_PATH

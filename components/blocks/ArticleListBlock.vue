@@ -20,8 +20,7 @@ defineProps(['content'])
 	justify-content: center;
 
 	&__card {
-		max-width: 427px;
-		width: 30%;
+		max-width: 426px;
 	}
 
 	&__card-img-wr,
