@@ -1,5 +1,6 @@
 <template lang="pug">
-component(:is="componentName(comp.type)" v-for="comp in store.data.body" :content="comp.data")
+.page
+  component(:is="componentName(comp.type)" v-for="comp in store.data.body" :content="comp.data")
 </template>
 
 <script setup>

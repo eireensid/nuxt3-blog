@@ -14,7 +14,8 @@ export default defineNuxtConfig({
 					href: 'https://fonts.googleapis.com/css?family=Montserrat:ital,wght@0,400;0,800;1,300'
 				}
 			]
-		}
+		},
+		pageTransition: { name: 'page', mode: 'out-in' }
 	},
 	css: ['~/assets/style/main.scss'],
 	vite: {
@@ -22,7 +23,7 @@ export default defineNuxtConfig({
 			preprocessorOptions: {
 				scss: {
 					additionalData:
-						'@use "./assets/style/_reset.scss" as *; @use "./assets/style/_mixins.scss" as *; @use "./assets/style/_variables.scss" as *; @use "./assets/style/_media.scss" as *;'
+						'@use "./assets/style/_reset.scss" as *; @use "./assets/style/_helpers.scss" as *; @use "./assets/style/_variables.scss" as *; @use "./assets/style/_media.scss" as *;'
 				}
 			}
 		}

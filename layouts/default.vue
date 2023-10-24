@@ -1,10 +1,11 @@
 <template lang="pug">
-Header
-main.main
-  Preloader(v-if="store.pending")
-  .wrapper
-    slot
-Footer
+.template
+  Header
+  main.main
+    Preloader(v-if="store.pending")
+    .wrapper
+      slot
+  Footer
 </template>
 
 <script setup>
