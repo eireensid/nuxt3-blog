@@ -1,10 +1,45 @@
 <template lang="pug">
-.article-list
-  div my comp
-  .article-list__card
+.article-list(v-if="content")
+  .article-list__card(v-for="article in content.articles")
     .article-list__card-img-wr
-      img.article-list__card-img
-    h3.article-list__card-title
-    button.article-list__card-btn
+      img.article-list__card-img(:src="article.image")
+    h3.article-list__card-title {{article.title}}
+    NuxtLink.article-list__card-btn(:to="article.link") Читать
 </template>
-<script setup></script>
+
+<script setup>
+defineProps(['content'])
+</script>
+
+<style lang="scss" scoped>
+.article-list {
+	margin: 30px 0 200px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+	justify-content: center;
+
+	&__card {
+		max-width: 427px;
+		width: 30%;
+	}
+
+	&__card-img-wr,
+	&__card-img {
+		width: 100%;
+	}
+
+	&__card-img-wr {
+		height: 320px;
+	}
+
+	&__card-img {
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__card-title {
+		margin: 20px 0 30px;
+	}
+}
+</style>

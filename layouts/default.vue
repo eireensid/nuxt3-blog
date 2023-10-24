@@ -2,7 +2,8 @@
 Header
 main.main
   Preloader(v-if="store.pending")
-  slot
+  .wrapper
+    slot
 Footer
 </template>
 
@@ -14,10 +15,3 @@ import { useApiStore } from '@/stores/api.js'
 
 const store = useApiStore()
 </script>
-
-<style lang="scss">
-.main {
-	position: relative;
-	height: 100%;
-}
-</style>

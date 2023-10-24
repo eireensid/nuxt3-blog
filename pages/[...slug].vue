@@ -1,5 +1,5 @@
 <template lang="pug">
-component(:is="componentName(comp.type)" v-for="comp in store.data.body")
+component(:is="componentName(comp.type)" v-for="comp in store.data.body" :content="comp.data")
 </template>
 
 <script setup>
