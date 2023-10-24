@@ -57,12 +57,10 @@
 }
 
 %description {
-  @include font(24px, 30px, 500, $black);
-  margin-bottom: 24px;
+  @include font(18, 26);
 
   @include breakpoints(medium) {
-		@include font(24px, 38px);
-    margin-bottom: 36px;
+		@include font(18, 26);
 	}
 }
 

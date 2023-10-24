@@ -13,7 +13,6 @@ defineProps(['content'])
 
 <style lang="scss" scoped>
 .article-list {
-	margin: 30px 0 200px;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 30px;
@@ -31,11 +30,13 @@ defineProps(['content'])
 	&__card-img-wr {
 		height: 320px;
 		background: $gray;
+		border-radius: 2px;
 	}
 
 	&__card-img {
 		height: 100%;
 		object-fit: cover;
+		border-radius: inherit;
 	}
 
 	&__card-title {

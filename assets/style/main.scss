@@ -16,6 +16,13 @@
   height: 100%;
 }
 
+.page {
+  margin: 30px 0 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
 .page-enter-active,
 .page-leave-active {
   transition: all 0.4s;
