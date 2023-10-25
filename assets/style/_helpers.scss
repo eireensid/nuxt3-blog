@@ -45,22 +45,10 @@
 }
 
 %title {
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  font-family: 'Unbounded', sans-serif;
-  @include font(28px, 38px, 500, $black);
+  @include font(28, 38, 800);
 
   @include breakpoints(medium) {
-		@include font(48px, 65px);
-    margin-bottom: 36px;
-	}
-}
-
-%description {
-  @include font(18, 26);
-
-  @include breakpoints(medium) {
-		@include font(18, 26);
+		@include font(34, 46, 800);
 	}
 }
 
@@ -77,6 +65,6 @@
 }
 
 @function toRem($value) {
-  $remValue: calc($value / 16) + rem;
+  $remValue: $value / 16 + rem;
   @return $remValue;
 }

@@ -3,7 +3,7 @@
   .article-intro__img-wr
     img.article-intro__img(:src="content.image" loading="lazy" :alt="content.title")
   .article-intro__content
-    h3.article-intro__title {{content.title}}
+    h1.article-intro__title {{content.title}}
     .article-intro__info
       .article-intro__info-col.article-intro__info-col--center
         .article-intro__info-ico-wr
@@ -13,7 +13,7 @@
       .article-intro__info-col
         span.article-intro__info-text {{content.reading_time}} мин время чтения
         span.article-intro__info-text {{content.views_count}} прочитали статью
-    .article-intro__text(v-html="content.short_description")
+    p.article-intro__text(v-html="content.short_description")
 </template>
 
 <script setup>
@@ -81,10 +81,6 @@ defineProps(['content'])
 
 	&__info-text {
 		@include font(14, 20, 400, $gray);
-	}
-
-	&__text {
-		@extend %description;
 	}
 }
 </style>
