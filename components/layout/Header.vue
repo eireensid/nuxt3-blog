@@ -1,10 +1,12 @@
 <template lang="pug">
 header.header
   NuxtLink.header__logo-wr(to="/" @click="scrollTop")
-    img.header__logo(src="@/assets/img/logo.svg" alt="Test blog")
+    Logo.header__logo
 </template>
 
 <script setup>
+import Logo from '@/assets/img/logo.svg'
+
 const scrollTop = () => {
 	window.scrollTo({ top: 0, behavior: 'smooth' })
 }

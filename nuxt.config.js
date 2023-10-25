@@ -1,8 +1,10 @@
+import svgLoader from 'vite-svg-loader'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	app: {
 		head: {
-			title: 'Тестовое задание Fruktorum',
+			title: 'Test Blog',
 			link: [
 				{
 					rel: 'icon',
@@ -26,9 +28,10 @@ export default defineNuxtConfig({
 						'@use "./assets/style/_reset.scss" as *; @use "./assets/style/_helpers.scss" as *; @use "./assets/style/_variables.scss" as *; @use "./assets/style/_media.scss" as *;'
 				}
 			}
-		}
+		},
+		plugins: [svgLoader()]
 	},
-	modules: ['@pinia/nuxt', 'nuxt-icons'],
+	modules: ['@pinia/nuxt'],
 	runtimeConfig: {
 		public: {
 			apiPath: process.env.API_PATH

@@ -5,16 +5,21 @@
   .article-intro__content
     h3.article-intro__title {{content.title}}
     .article-intro__info
-      .article-intro__info-row
-        NuxtIcon(name="time")
+      .article-intro__info-col.article-intro__info-col--center
+        .article-intro__info-ico-wr
+          TimeIcon.article-intro__info-ico
+        .article-intro__info-ico-wr
+          EyeIcon.article-intro__info-ico
+      .article-intro__info-col
         span.article-intro__info-text {{content.reading_time}} мин время чтения
-      .article-intro__info-row
-        NuxtIcon(name="eye")
         span.article-intro__info-text {{content.views_count}} прочитали статью
     .article-intro__text(v-html="content.short_description")
 </template>
 
 <script setup>
+import TimeIcon from '@/assets/icons/time.svg'
+import EyeIcon from '@/assets/icons/eye.svg'
+
 defineProps(['content'])
 </script>
 
@@ -45,15 +50,33 @@ defineProps(['content'])
 
 	&__info {
 		display: flex;
-		flex-direction: column;
-		gap: 4px;
 		margin-bottom: 50px;
+		gap: 8px;
 	}
 
-	&__info-row {
+	&__info-col {
 		display: flex;
+		flex-direction: column;
+		gap: 4px;
+
+		&--center {
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	&__info-ico-wr {
+		width: 16px;
+		height: 20px;
+		display: flex;
+		justify-content: center;
 		align-items: center;
-		gap: 10px;
+	}
+
+	&__info-ico {
+		width: 16px;
+		height: 16px;
+		fill: $gray;
 	}
 
 	&__info-text {
