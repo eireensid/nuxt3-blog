@@ -1,6 +1,6 @@
 <template lang="pug">
 component.page(:is="store.data.page_type === 'article' ? 'article' : 'div'")
-  section(v-for="comp in store.data.body")
+  section(v-for="comp in store.data.body" :key="comp.id")
     component(:is="componentName(comp.type)" :content="comp.data")
 </template>
 

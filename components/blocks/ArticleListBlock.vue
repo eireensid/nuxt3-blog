@@ -1,6 +1,6 @@
 <template lang="pug">
 .article-list(v-if="content")
-  .article-list__card(v-for="article in content.articles")
+  .article-list__card(v-for="(article, i) in content.articles" :key="i")
     .article-list__card-img-wr
       img.article-list__card-img(:src="article.image" loading="lazy" :alt="article.title")
     h3.article-list__card-title {{article.title}}

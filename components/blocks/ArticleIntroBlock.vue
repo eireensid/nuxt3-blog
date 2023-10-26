@@ -5,13 +5,11 @@
   .article-intro__content
     h1.article-intro__title {{content.title}}
     .article-intro__info
-      .article-intro__info-col.article-intro__info-col--center
-        .article-intro__info-ico-wr
-          TimeIcon.article-intro__info-ico
-        .article-intro__info-ico-wr
-          EyeIcon.article-intro__info-ico
-      .article-intro__info-col
+      .article-intro__info-row
+        TimeIcon.article-intro__info-ico
         span.article-intro__info-text {{content.reading_time}} мин время чтения
+      .article-intro__info-row
+        EyeIcon.article-intro__info-ico
         span.article-intro__info-text {{content.views_count}} прочитали статью
     p.article-intro__text(v-html="content.short_description")
 </template>
@@ -50,33 +48,25 @@ defineProps(['content'])
 
 	&__info {
 		display: flex;
-		margin-bottom: 50px;
-		gap: 8px;
-	}
-
-	&__info-col {
-		display: flex;
 		flex-direction: column;
+		margin-bottom: 50px;
 		gap: 4px;
-
-		&--center {
-			align-items: center;
-			justify-content: center;
-		}
 	}
 
-	&__info-ico-wr {
-		width: 16px;
-		height: 20px;
+	&__info-row {
 		display: flex;
-		justify-content: center;
 		align-items: center;
+		gap: 8px;
 	}
 
 	&__info-ico {
 		width: 16px;
 		height: 16px;
 		fill: $gray;
+
+		&:first-child {
+			padding-top: 2px;
+		}
 	}
 
 	&__info-text {

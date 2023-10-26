@@ -20,9 +20,32 @@ defineProps(['content'])
 			margin-bottom: 50px;
 		}
 
+		h3 {
+			@include font(22, 30, 800);
+			margin-bottom: 30px;
+		}
+
 		p {
 			&:not(:last-child) {
 				margin-bottom: 20px;
+			}
+		}
+
+		ul {
+			max-width: 610px;
+			margin: 0 auto 20px;
+		}
+
+		li {
+			&:before {
+				content: '';
+				display: inline-block;
+				width: 8px;
+				height: 8px;
+				border-radius: 1px;
+				background: $black;
+				transform: rotate(45deg);
+				margin: 0 10px 2px 0;
 			}
 		}
 
