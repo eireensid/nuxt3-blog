@@ -23,6 +23,7 @@
   gap: 100px;
 }
 
+// Page animation
 .page-enter-active,
 .page-leave-active {
   transition: all 0.4s;
@@ -31,4 +32,24 @@
 .page-leave-to {
   opacity: 0;
   filter: blur(1rem);
+}
+
+// Swiper
+.swiper-button-prev,
+.swiper-button-next {
+  width: 60px!important;
+  height: 60px!important;
+  border-radius: $radius;
+  background: $black;
+  @include transition;
+
+  &:hover {
+    opacity: .6;
+  }
+
+  &:after {
+    color: $white;
+    font-size: toRem(20)!important;
+    font-weight: 700!important;
+  }
 }

@@ -31,7 +31,8 @@ export default defineNuxtConfig({
 		},
 		plugins: [svgLoader()]
 	},
-	modules: ['@pinia/nuxt'],
+	modules: ['@pinia/nuxt', 'nuxt-swiper'],
+	plugins: ['~/plugins/bus'],
 	runtimeConfig: {
 		public: {
 			apiPath: process.env.API_PATH
