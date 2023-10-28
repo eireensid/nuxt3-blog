@@ -9,8 +9,7 @@ Swiper.slider(v-if="content" ref="swiper"
 
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { ref } from 'vue'
-import SliderPages from '../ui/SliderPages.vue'
+import SliderPages from '@/components/ui/SliderPages.vue'
 import bus from 'nuxt-bus'
 
 defineProps(['content'])

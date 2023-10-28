@@ -4,12 +4,12 @@
 
 <script setup>
 import { onMounted, ref } from 'vue'
-
-defineProps(['content'])
 import { useSwiper } from 'swiper/vue'
 import bus from 'nuxt-bus'
 const swiper = useSwiper()
 const activePage = ref(1)
+
+defineProps(['content'])
 
 onMounted(() => {
 	bus.on('bus', $event => {
