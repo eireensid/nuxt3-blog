@@ -1,6 +1,6 @@
 <template lang="pug">
 .cta-form
-  img.cta-form__img(src="@/assets/img/cta-photo.jpg" alt="Стань участником проекта")
+  img.cta-form__img(src="@/assets/img/cta-photo.jpg" loading="lazy" alt="Стань участником проекта")
   form.cta-form__form(@submit.prevent="submit")
     fieldset.cta-form__fieldset
       legend.cta-form__title Стань участником проекта

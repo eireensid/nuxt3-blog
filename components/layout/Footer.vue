@@ -35,7 +35,7 @@ import Telegram from '@/assets/icons/telegram.svg'
 	margin-top: auto;
 
 	&__top {
-		@include flex(center, space-between);
+		@include flex(flex-end, space-between);
 		margin: 50px 0 70px;
 		gap: 50px;
 	}
@@ -48,6 +48,7 @@ import Telegram from '@/assets/icons/telegram.svg'
 			flex-direction: column;
 			align-items: flex-end;
 			padding-right: toRem(75);
+			flex-basis: 20%;
 		}
 	}
 
@@ -60,9 +61,35 @@ import Telegram from '@/assets/icons/telegram.svg'
 	&__contact {
 		display: flex;
 		flex-direction: column;
+
+		&-title {
+			@include font(14, 20, 400, $gray);
+		}
+
+		&-value {
+			@include transition;
+
+			&:hover {
+				color: $blue;
+			}
+		}
 	}
 
-	&__icons {
+	&__socials {
+		align-self: flex-start;
+		margin-top: 20px;
+	}
+
+	&__social {
+		@include transition;
+
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+
+		&:hover {
+			opacity: 0.7;
+		}
 	}
 }
 </style>
