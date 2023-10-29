@@ -1,6 +1,11 @@
 @use "./assets/style/_variables.scss" as *;
 @use "./assets/style/_media.scss" as *;
 
+@function toRem($value) {
+  $remValue: calc($value / 16) + rem;
+  @return $remValue;
+}
+
 @mixin transition($style: all) {
   transition: $style .25s ease-in-out;
 }
@@ -68,7 +73,3 @@
   }
 }
 
-@function toRem($value) {
-  $remValue: calc($value / 16) + rem;
-  @return $remValue;
-}
