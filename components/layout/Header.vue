@@ -1,16 +1,7 @@
 <template lang="pug">
 header.header
-  NuxtLink.header__logo-wr(to="/" @click="scrollTop")
-    Logo.header__logo
+  Logo
 </template>
-
-<script setup>
-import Logo from '@/assets/img/logo.svg'
-
-const scrollTop = () => {
-	window.scrollTo({ top: 0, behavior: 'smooth' })
-}
-</script>
 
 <style lang="scss">
 .header {
@@ -24,14 +15,5 @@ const scrollTop = () => {
 	justify-content: center;
 	align-items: center;
 	z-index: 20;
-
-	&__logo {
-		@include transition;
-		will-change: transform;
-
-		&:hover {
-			transform: scale(1.05);
-		}
-	}
 }
 </style>
