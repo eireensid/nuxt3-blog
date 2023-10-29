@@ -1,11 +1,15 @@
 <template lang="pug">
-input.input(:placeholder="!isFocused ? placeholder : ''" @focus="isFocused = true" @blur="isFocused = false")
+input.input(:type="type ? type : 'text'" :placeholder="!isFocused ? placeholder : ''"
+  @focus="isFocused = true" @blur="isFocused = false"
+  :required="required" :value="modelValue"
+  @input="$emit('update:modelValue', $event.target.value)")
 </template>
 
 <script setup>
 import { ref } from 'vue'
 
-defineProps(['placeholder'])
+defineProps(['type', 'modelValue', 'placeholder', 'required'])
+defineEmits(['update:modelValue'])
 
 const isFocused = ref(false)
 </script>

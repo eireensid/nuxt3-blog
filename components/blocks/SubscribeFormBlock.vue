@@ -1,13 +1,29 @@
 <template lang="pug">
-.subscribe-form
+form.subscribe-form(@submit.prevent="submit")
   h3.subscribe-form__title Подпишись на рассылку
   .subscribe-form__col
-    Input(placeholder="Email")
-    Button(title="Подписаться" className="blue")
+    Input(type="email" placeholder="Email" required="true" v-model="email")
+    Button(title="Подписаться" className="blue" type="submit")
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
 defineProps(['content'])
+
+const email = ref('')
+const { notify } = useNotification()
+
+function validateEmail(email) {
+	var re = /\S+@\S+\.\S+/
+	return re.test(email)
+}
+
+const submit = () => {
+	if (validateEmail(email.value)) {
+		notify({ title: 'Спасибо за подписку!' })
+	}
+}
 </script>
 
 <style lang="scss">
