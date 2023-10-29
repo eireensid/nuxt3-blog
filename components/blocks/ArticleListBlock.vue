@@ -1,22 +1,35 @@
 <template lang="pug">
 .article-list(v-if="content")
-  .article-list__card(v-for="(article, i) in content.articles" :key="i")
-    .article-list__card-img-wr
-      img.article-list__card-img(:src="article.image" loading="lazy" :alt="article.title")
-    h3.article-list__card-title {{article.title}}
-    NuxtLink.article-list__card-btn(:to="article.link") Читать
+  h2.article-list__title(v-if="route.path !== '/'") {{content.title}}
+  .article-list__cards
+    .article-list__card(v-for="(article, i) in content.articles" :key="i")
+      .article-list__card-img-wr
+        img.article-list__card-img(:src="article.image" loading="lazy" :alt="article.title")
+      h3.article-list__card-title {{article.title}}
+      NuxtLink.article-list__card-btn(:to="article.link") Читать
 </template>
 
 <script setup>
+import { useRoute } from 'nuxt/app'
+
 defineProps(['content'])
+
+const route = useRoute()
 </script>
 
 <style lang="scss" scoped>
 .article-list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 30px;
-	justify-content: center;
+	&__title {
+		@extend %title;
+		margin-bottom: 50px;
+	}
+
+	&__cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+		justify-content: center;
+	}
 
 	&__card {
 		max-width: 426px;
