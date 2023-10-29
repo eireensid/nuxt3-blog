@@ -3,7 +3,7 @@ form.subscribe-form(@submit.prevent="submit")
   h3.subscribe-form__title Подпишись на рассылку
   .subscribe-form__col
     Input(type="email" placeholder="Email" required="true" v-model="email")
-    Button(title="Подписаться" className="blue" type="submit")
+    Button(title="Подписаться" type="submit")
 </template>
 
 <script setup>
@@ -26,7 +26,7 @@ const submit = () => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .subscribe-form {
 	background: $black;
 	border-radius: $radius;

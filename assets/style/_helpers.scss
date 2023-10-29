@@ -64,12 +64,3 @@
   @include font(18, 26, 400, $white);
 }
 
-%buttonBlack {
-  @extend %button;
-  background: $black;
-
-  &:hover {
-    background: $blue;
-  }
-}
-

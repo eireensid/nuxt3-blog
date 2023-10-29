@@ -1,22 +1,21 @@
 <template lang="pug">
-button.button {{title}}
+NuxtLink.link(:to="link") {{title}}
 </template>
 
 <script setup>
-defineProps(['title'])
+defineProps(['title', 'link'])
 </script>
 
 <style lang="scss" scoped>
-.button {
+.link {
 	padding: 10px 50px;
 	border-radius: $radius;
 	@include transition;
 	@include font(18, 26, 400, $white);
-	background: $blue;
-	border: 1px solid $blue;
+	background: $black;
 
 	&:hover {
-		background: transparent;
+		background: $blue;
 	}
 }
 </style>

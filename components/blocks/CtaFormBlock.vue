@@ -7,7 +7,7 @@
       Input.cta-form__input(type="text" placeholder="Имя" required="true" v-model="name")
       Input.cta-form__input(type="tel" placeholder="Телефон" required="true" v-model="phone")
       Input.cta-form__input(type="email" placeholder="Email" required="true" v-model="email")
-    Button.cta-form__btn(title="Присоединиться" className="blue" type="submit")
+    Button.cta-form__btn(title="Присоединиться" type="submit")
 </template>
 
 <script setup>
@@ -32,7 +32,7 @@ const submit = () => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .cta-form {
 	background: $black;
 	border-radius: $radius;
