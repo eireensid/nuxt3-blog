@@ -11,6 +11,7 @@ defineProps(['content'])
 .text-block {
 	display: flex;
 	justify-content: center;
+	@extend %fields;
 
 	&__content {
 		max-width: 884px;
@@ -61,17 +62,29 @@ defineProps(['content'])
 			footer {
 				@include font(14, 20, 400, $gray);
 				max-width: 250px;
-				margin-left: 116px;
+				margin-left: 38px;
+
+				@include breakpoints(medium) {
+					margin-left: 116px;
+				}
 			}
 
 			&:before {
 				content: '';
-				background: url('@/assets/icons/quotes.svg');
-				width: 80px;
-				height: 64px;
+				background-image: url('@/assets/icons/quotes.svg');
+				width: 40px;
+				height: 24px;
 				display: inline-block;
 				float: left;
-				margin-right: 36px;
+				background-size: 70%;
+				background-repeat: no-repeat;
+
+				@include breakpoints(medium) {
+					background-size: 100%;
+					width: 80px;
+					height: 64px;
+					margin-right: 36px;
+				}
 			}
 		}
 	}

@@ -64,3 +64,19 @@
   @include font(18, 26, 400, $white);
 }
 
+%fields {
+  padding: 0 16px;
+
+  @include breakpoints(large) {
+    padding: 0;
+  }
+}
+
+%imgCustomRadius {
+  border-radius: 2px 110px 2px 2px;
+
+  @include breakpoints(large) {
+    border-radius: 2px 220px 2px 2px;
+  }
+}
+

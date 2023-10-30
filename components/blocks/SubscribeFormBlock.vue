@@ -1,5 +1,5 @@
 <template lang="pug">
-form.subscribe-form(@submit.prevent="submit")
+form.subscribe-form(@submit.prevent="submit" v-if="isShow")
   h3.subscribe-form__title Подпишись на рассылку
   .subscribe-form__col
     Input(type="email" placeholder="Email" required="true" v-model="email"
@@ -8,13 +8,19 @@ form.subscribe-form(@submit.prevent="submit")
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useNotification } from '@kyvg/vue3-notification'
 
 defineProps(['content'])
-
+const isShow = ref(false)
 const email = ref('')
 const { notify } = useNotification()
+
+onMounted(() => {
+	setTimeout(() => {
+		isShow.value = true
+	}, 1000)
+})
 
 const submit = () => {
 	notify({ title: 'Спасибо за подписку!', text: 'Письмо отправлено на почту' })

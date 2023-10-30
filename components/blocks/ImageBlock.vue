@@ -14,9 +14,13 @@ defineProps(['content'])
 
 	&__img {
 		width: 100%;
-		height: 550px;
+		height: 400px;
 		background: $gray;
-		border-radius: 2px 220px 2px 2px;
+		@extend %imgCustomRadius;
+
+		@include breakpoints(medium) {
+			height: 550px;
+		}
 	}
 
 	&__caption {

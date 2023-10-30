@@ -48,7 +48,8 @@ const submit = () => {
 
 	&__img {
 		max-width: 595px;
-		height: 326px;
+		width: 100%;
+		max-height: 326px;
 	}
 
 	&__form {

@@ -1,7 +1,7 @@
 <template lang="pug">
 .article-intro(v-if="content")
   .article-intro__img-wr
-    img.article-intro__img(:src="content.image" loading="lazy" :alt="content.title")
+    img.article-intro__img(:src="content.image" :alt="content.title")
   .article-intro__content
     h1.article-intro__title {{content.title}}
     .article-intro__info
@@ -28,22 +28,29 @@ defineProps(['content'])
 
 	&__img-wr {
 		max-width: 540px;
-		height: 580px;
+		max-height: 580px;
 		background: $gray;
 		flex-shrink: 0;
-		border-radius: 2px 220px 2px 2px;
+		@extend %imgCustomRadius;
 	}
 
 	&__img {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
 		border-radius: inherit;
 	}
 
+	&__content {
+		@extend %fields;
+	}
+
 	&__title {
-		@include font(56, 66, 800);
+		@include font(32, 42, 800);
 		margin-bottom: 30px;
+
+		@include breakpoints(large) {
+			@include font(56, 66, 800);
+		}
 	}
 
 	&__info {
