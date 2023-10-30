@@ -8,6 +8,7 @@ form.subscribe-form(@submit.prevent="submit")
 
 <script setup>
 import { ref } from 'vue'
+import { useNotification } from '@kyvg/vue3-notification'
 
 defineProps(['content'])
 
@@ -21,7 +22,8 @@ function validateEmail(email) {
 
 const submit = () => {
 	if (validateEmail(email.value)) {
-		notify({ title: 'Спасибо за подписку!' })
+		notify({ title: 'Спасибо за подписку!', text: 'Письмо отправлено на почту' })
+		email.value = ''
 	}
 }
 </script>

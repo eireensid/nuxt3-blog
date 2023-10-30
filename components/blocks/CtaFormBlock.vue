@@ -13,6 +13,7 @@
 
 <script setup>
 import { reactive } from 'vue'
+import { useNotification } from '@kyvg/vue3-notification'
 
 defineProps(['content'])
 const { notify } = useNotification()
@@ -58,8 +59,8 @@ const clearForm = () => {
 }
 
 const submit = () => {
-	console.log('submit')
 	notify({ title: 'Форма успешно отправлена!' })
+	clearForm()
 }
 </script>
 
