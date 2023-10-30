@@ -4,31 +4,62 @@
   form.cta-form__form(@submit.prevent="submit")
     fieldset.cta-form__fieldset
       legend.cta-form__title Стань участником проекта
-      Input.cta-form__input(type="text" placeholder="Имя" required="true" v-model="name")
-      Input.cta-form__input(type="tel" placeholder="Телефон" required="true" v-model="phone")
-      Input.cta-form__input(type="email" placeholder="Email" required="true" v-model="email")
+      Input.cta-form__input(type="text" placeholder="Имя" required="true" v-model="formData.name")
+      Input.cta-form__input(type="tel" placeholder="Телефон" required="true" v-model="formData.phone"
+        v-maska data-maska="+7(###)###-##-##" @change="checkPhone")
+      Input.cta-form__input(type="email" placeholder="Email" required="true" v-model="formData.email" @change="checkEmail")
     Button.cta-form__btn(title="Присоединиться" type="submit")
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { reactive } from 'vue'
 
 defineProps(['content'])
 const { notify } = useNotification()
 
-const name = ref('')
-const phone = ref('')
-const email = ref('')
+const formData = reactive({
+	name: '',
+	phone: '',
+	email: ''
+})
 
-function validateEmail(email) {
-	var re = /\S+@\S+\.\S+/
-	return re.test(email)
+function checkPhone() {
+	let field = document.querySelector('.cta-form input[type="tel"]')
+
+	if (formData.phone.length < 16) {
+		field.setCustomValidity('Пожалуйста, введите телефон полностью!')
+		field.reportValidity()
+		return false
+	}
+
+	field.setCustomValidity('')
+}
+
+function checkEmail() {
+	let field = document.querySelector('.cta-form input[type="email"]')
+
+	if (!formData.email.includes('@')) {
+		field.setCustomValidity('Адрес электронной почты должен содержать символ "@"')
+		field.reportValidity()
+		return false
+	} else if (!formData.email.includes('.')) {
+		field.setCustomValidity('Адрес электронной почты должен содержать символ "."')
+		field.reportValidity()
+		return false
+	}
+
+	field.setCustomValidity('')
+}
+
+const clearForm = () => {
+	formData.name = ''
+	formData.phone = ''
+	formData.email = ''
 }
 
 const submit = () => {
-	if (validateEmail(email.value)) {
-		notify({ title: 'Форма успешно отправлена!' })
-	}
+	console.log('submit')
+	notify({ title: 'Форма успешно отправлена!' })
 }
 </script>
 

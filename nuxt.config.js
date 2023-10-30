@@ -32,7 +32,7 @@ export default defineNuxtConfig({
 		plugins: [svgLoader()]
 	},
 	modules: ['@pinia/nuxt', 'nuxt-swiper', 'nuxt3-notifications'],
-	plugins: ['~/plugins/bus', '~/plugins/validityDirective'],
+	plugins: ['~/plugins/bus', '~/plugins/phoneMask'],
 	runtimeConfig: {
 		public: {
 			apiPath: process.env.API_PATH
