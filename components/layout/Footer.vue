@@ -37,11 +37,16 @@ import Telegram from '@/assets/icons/telegram.svg'
 	&__top {
 		@include flex(flex-start, space-between);
 		margin: 50px 0 70px;
-		gap: 50px;
+		gap: 30px;
 		@extend %fields;
+
+		@include breakpoints(small) {
+			flex-direction: row;
+		}
 
 		@include breakpoints(medium) {
 			@include flex(flex-end, space-between);
+			gap: 50px;
 		}
 	}
 

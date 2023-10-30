@@ -27,19 +27,33 @@ defineProps(['content'])
 	gap: 30px;
 	align-items: initial;
 
-	@include breakpoints(large) {
+	@include breakpoints(medium) {
+		flex-direction: column;
+	}
+
+	@include breakpoints(xlarge) {
 		align-items: center;
+		flex-direction: row;
 	}
 
 	&__img-wr {
-		max-width: 540px;
 		height: 320px;
 		background: $gray;
 		flex-shrink: 0;
 		@extend %imgCustomRadius;
 
-		@include breakpoints(large) {
+		@include breakpoints(small) {
+			height: 420px;
+			margin: 0 16px;
+		}
+
+		@include breakpoints(medium) {
 			height: 580px;
+		}
+
+		@include breakpoints(xlarge) {
+			margin: 0;
+			width: 540px;
 		}
 	}
 
@@ -51,6 +65,17 @@ defineProps(['content'])
 
 	&__content {
 		@extend %fields;
+
+		@include breakpoints(medium) {
+			max-width: 884px;
+			margin: 0 auto;
+			padding: 0;
+		}
+
+		@include breakpoints(xlarge) {
+			max-width: initial;
+			margin: 0;
+		}
 	}
 
 	&__title {

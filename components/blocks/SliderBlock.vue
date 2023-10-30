@@ -26,6 +26,11 @@ const onSlideChange = () => {
 		width: 100%;
 		height: 320px;
 
+		@include breakpoints(small) {
+			width: 90%;
+			height: 420px;
+		}
+
 		@include breakpoints(medium) {
 			height: 550px;
 			width: 83%;

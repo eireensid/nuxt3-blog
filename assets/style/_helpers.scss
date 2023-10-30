@@ -52,7 +52,7 @@
 %title {
   @include font(26, 36, 800);
 
-  @include breakpoints(medium) {
+  @include breakpoints(small) {
 		@include font(34, 46, 800);
 	}
 }
@@ -67,7 +67,7 @@
 %fields {
   padding: 0 16px;
 
-  @include breakpoints(large) {
+  @include breakpoints(xlarge) {
     padding: 0;
   }
 }

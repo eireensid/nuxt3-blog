@@ -2,7 +2,7 @@
 form.subscribe-form(@submit.prevent="submit" v-if="isShow")
   h3.subscribe-form__title Подпишись на рассылку
   .subscribe-form__col
-    Input(type="email" placeholder="Email" required="true" v-model="email"
+    Input.subscribe-form__input(type="email" placeholder="Email" required="true" v-model="email"
       @input="checkEmail('.subscribe-form', email)")
     Button(title="Подписаться" type="submit")
 </template>
@@ -40,13 +40,23 @@ const submit = () => {
 	}
 
 	&__col {
-		@include flex(flex-end, flex-end);
-		flex-basis: 50%;
-		gap: 36px;
+		@include breakpoints(medium) {
+			@include flex(flex-end, flex-end);
+			flex-basis: 50%;
+			gap: 36px;
+		}
 	}
 
 	&__title {
 		@include font(22, 30, 800, $white);
+		margin-bottom: 36px;
+
+		@include breakpoints(medium) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__input {
 		margin-bottom: 36px;
 
 		@include breakpoints(medium) {

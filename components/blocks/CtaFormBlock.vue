@@ -50,6 +50,14 @@ const submit = () => {
 		max-width: 595px;
 		width: 100%;
 		max-height: 326px;
+
+		@include breakpoints(medium) {
+			width: 45%;
+		}
+
+		@include breakpoints(large) {
+			width: 100%;
+		}
 	}
 
 	&__form {

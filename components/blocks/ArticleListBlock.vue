@@ -67,6 +67,10 @@ const route = useRoute()
 
 	&__card-bottom {
 		@extend %fields;
+
+		@include breakpoints(small) {
+			padding: 0;
+		}
 	}
 }
 </style>
