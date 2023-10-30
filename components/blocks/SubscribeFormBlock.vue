@@ -2,7 +2,8 @@
 form.subscribe-form(@submit.prevent="submit")
   h3.subscribe-form__title Подпишись на рассылку
   .subscribe-form__col
-    Input(type="email" placeholder="Email" required="true" v-model="email")
+    Input(type="email" placeholder="Email" required="true" v-model="email"
+      @input="checkEmail('.subscribe-form', email)")
     Button(title="Подписаться" type="submit")
 </template>
 
@@ -15,16 +16,9 @@ defineProps(['content'])
 const email = ref('')
 const { notify } = useNotification()
 
-function validateEmail(email) {
-	var re = /\S+@\S+\.\S+/
-	return re.test(email)
-}
-
 const submit = () => {
-	if (validateEmail(email.value)) {
-		notify({ title: 'Спасибо за подписку!', text: 'Письмо отправлено на почту' })
-		email.value = ''
-	}
+	notify({ title: 'Спасибо за подписку!', text: 'Письмо отправлено на почту' })
+	email.value = ''
 }
 </script>
 

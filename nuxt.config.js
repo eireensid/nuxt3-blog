@@ -41,7 +41,8 @@ export default defineNuxtConfig({
 	alias: {
 		'@/assets': './assets',
 		'@/components': './components',
-		'@/stores': './stores'
+		'@/stores': './stores',
+		'@/composables': './composables'
 	},
 	components: [
 		{
