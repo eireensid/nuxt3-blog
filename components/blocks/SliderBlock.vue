@@ -23,8 +23,13 @@ const onSlideChange = () => {
 .slider {
 	&__img {
 		margin: 0 auto;
-		width: 83%;
-		height: 550px;
+		width: 100%;
+		height: 320px;
+
+		@include breakpoints(medium) {
+			height: 550px;
+			width: 83%;
+		}
 	}
 }
 </style>

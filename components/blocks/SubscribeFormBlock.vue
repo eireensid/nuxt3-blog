@@ -33,7 +33,11 @@ const submit = () => {
 	background: $black;
 	border-radius: $radius;
 	padding: 30px;
-	@include flex(center, space-between);
+	@include flex(flex-start, space-between);
+
+	@include breakpoints(medium) {
+		@include flex(center, space-between);
+	}
 
 	&__col {
 		@include flex(flex-end, flex-end);
@@ -43,6 +47,11 @@ const submit = () => {
 
 	&__title {
 		@include font(22, 30, 800, $white);
+		margin-bottom: 36px;
+
+		@include breakpoints(medium) {
+			margin-bottom: 0;
+		}
 	}
 }
 </style>

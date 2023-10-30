@@ -25,13 +25,22 @@ defineProps(['content'])
 .article-intro {
 	@include flex;
 	gap: 30px;
+	align-items: initial;
+
+	@include breakpoints(large) {
+		align-items: center;
+	}
 
 	&__img-wr {
 		max-width: 540px;
-		max-height: 580px;
+		height: 320px;
 		background: $gray;
 		flex-shrink: 0;
 		@extend %imgCustomRadius;
+
+		@include breakpoints(large) {
+			height: 580px;
+		}
 	}
 
 	&__img {

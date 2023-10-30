@@ -14,7 +14,7 @@ defineProps(['content'])
 
 	&__img {
 		width: 100%;
-		height: 400px;
+		height: 320px;
 		background: $gray;
 		@extend %imgCustomRadius;
 

@@ -50,7 +50,7 @@
 }
 
 %title {
-  @include font(28, 38, 800);
+  @include font(26, 36, 800);
 
   @include breakpoints(medium) {
 		@include font(34, 46, 800);

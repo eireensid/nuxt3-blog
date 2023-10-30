@@ -5,8 +5,9 @@
     .article-list__card(v-for="(article, i) in content.articles" :key="i")
       .article-list__card-img-wr
         img.article-list__card-img(:src="article.image" loading="lazy" :alt="article.title")
-      h3.article-list__card-title {{article.title}}
-      CustomLink.article-list__card-btn(:link="article.link" title="Читать")
+      .article-list__card-bottom
+        h3.article-list__card-title {{article.title}}
+        CustomLink.article-list__card-btn(:link="article.link" title="Читать")
 </template>
 
 <script setup>
@@ -22,6 +23,7 @@ const route = useRoute()
 	&__title {
 		@extend %title;
 		margin-bottom: 50px;
+		@extend %fields;
 	}
 
 	&__cards {
@@ -61,6 +63,10 @@ const route = useRoute()
 		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
 		height: toRem(60);
+	}
+
+	&__card-bottom {
+		@extend %fields;
 	}
 }
 </style>
